@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EmptyAlbumArtContainer extends StatelessWidget {
@@ -18,23 +19,15 @@ class EmptyAlbumArtContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(_radius),
+//      borderRadius: BorderRadius.only(
+//        bottomLeft: Radius.circular(_radius),
+//        bottomRight: Radius.circular(_radius),
+//      ),
+//      borderRadius: BorderRadius.vertical(bottom: Radius.circular(_radius)),
       child: Stack(
         children: <Widget>[
-          Container(
-            width: double.infinity,
-            height: _albumArtSize,
-            color: Colors.grey[400],
-            child: Center(
-              child: Icon(
-                Icons.music_note,
-                size: _iconSize,
-                color: Colors.black,
-              ),
-            ),
-          ),
           Opacity(
-            opacity: 0.55,
+            opacity: 1,
             child: Container(
               width: double.infinity,
               height: _albumArtSize,
@@ -47,10 +40,22 @@ class EmptyAlbumArtContainer extends StatelessWidget {
                     0.85,
                   ],
                   colors: [
-                    Color(0xFF47ACE1),
-                    Color(0xFFDF5F9D),
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).accentColor
                   ],
                 ),
+              ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: _albumArtSize,
+//            color: Colors.grey[400],
+            child: Center(
+              child: Icon(
+                Icons.music_note,
+                size: _iconSize,
+                color: Colors.black,
               ),
             ),
           ),

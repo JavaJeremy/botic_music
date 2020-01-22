@@ -34,7 +34,7 @@ class AlbumArtContainer extends StatelessWidget {
             ),
           ),
           Opacity(
-            opacity: 0.55,
+            opacity: 1,
             child: Container(
               width: double.infinity,
               height: _albumArtSize,
@@ -44,11 +44,11 @@ class AlbumArtContainer extends StatelessWidget {
                   end: Alignment.topRight,
                   stops: [
                     0.0,
-                    0.85,
+                    0.95,
                   ],
                   colors: [
-                    Color(0xFF47ACE1),
-                    Color(0xFFDF5F9D),
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).accentColor
                   ],
                 ),
               ),

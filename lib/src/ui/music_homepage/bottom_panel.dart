@@ -1,8 +1,8 @@
-import 'package:flute_music_player/flute_music_player.dart';
-import 'package:flutter/material.dart';
 import 'package:botic_music/src/blocs/global.dart';
 import 'package:botic_music/src/common/music_icons.dart';
 import 'package:botic_music/src/models/playerstate.dart';
+import 'package:flute_music_player/flute_music_player.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -45,6 +45,7 @@ class BottomPanel extends StatelessWidget {
                         onTap: () {
                           if (_currentSong.uri == null) {
                             return;
+//                            _globalBloc.musicPlayerBloc.playMusic();
                           }
                           if (PlayerState.paused == _state) {
                             _globalBloc.musicPlayerBloc.playMusic(_currentSong);

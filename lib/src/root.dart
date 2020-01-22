@@ -1,5 +1,6 @@
 import 'package:botic_music/src/blocs/global.dart';
 import 'package:botic_music/src/ui/music_homepage/music_homepage.dart';
+import 'package:botic_music/src/ui/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -27,11 +28,7 @@ class BoticMusic extends StatelessWidget {
       dispose: (BuildContext context, GlobalBloc value) => value.dispose(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          sliderTheme: SliderThemeData(
-            trackHeight: 1,
-          ),
-        ),
+        theme: basicTheme(),
         home: SafeArea(
           child: StreamBuilder<PermissionStatus>(
             stream: _globalBloc.permissionsBloc.storagePermissionStatus$,

@@ -45,10 +45,20 @@ class MusicPlayerBloc {
     await MusicFinder.allSongs().then(
       (data) async {
         for (Song song in data) {
+          //Retrieve timestamp
           if (song.timestamp == null) {
             File songFile = File.fromUri(Uri.file(song.uri));
             DateTime date = await songFile.lastModified();
             song.timestamp = date.millisecondsSinceEpoch;
+          }
+          //Try to generate Artist
+          if (song.artist == '<unknown>') {
+            if (song.title.contains('-')) {
+              song.artist =
+                  song.title.substring(0, song.title.indexOf('-') - 1);
+              song.title = song.title
+                  .substring(song.title.indexOf('-') + 2, song.title.length);
+            }
           }
         }
         _songs$.add(data);
@@ -56,7 +66,14 @@ class MusicPlayerBloc {
     );
   }
 
+  //plays random song without params
   void playMusic(Song song) {
+//  void playMusic([Song song]) {
+//    if (song == null || song.uri == null) {
+//      var rng = new Random();
+//      var random = rng.nextInt(_songs$.value.length);
+//      song = _songs$.value.elementAt(random);
+//    }
     _audioPlayer.play(song.uri);
     updatePlayerState(PlayerState.playing, song);
   }

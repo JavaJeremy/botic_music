@@ -48,37 +48,37 @@ class _MusicHomepageState extends State<MusicHomepage> {
       child: Scaffold(
         body: SlidingUpPanel(
           panel: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(_radius),
-              topRight: Radius.circular(_radius),
-            ),
+//            borderRadius: BorderRadius.only(
+//              topLeft: Radius.circular(_radius),
+//              topRight: Radius.circular(_radius),
+//            ),
             child: NowPlayingScreen(controller: _panelController),
           ),
           controller: _panelController,
           minHeight: 115,
           maxHeight: MediaQuery.of(context).size.height,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(_radius),
-            topRight: Radius.circular(_radius),
-          ),
+//          borderRadius: BorderRadius.only(
+//            topLeft: Radius.circular(_radius),
+//            topRight: Radius.circular(_radius),
+//          ),
           collapsed: Container(
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(_radius),
-                topRight: Radius.circular(_radius),
-              ),
+//                topLeft: Radius.circular(_radius),
+//                topRight: Radius.circular(_radius),
+                  ),
               gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
                 stops: [
                   0.0,
-                  0.7,
+                  0.9,
                 ],
                 colors: [
-                  Color(0xFF47ACE1),
-                  Color(0xFFDF5F9D),
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).accentColor,
                 ],
               ),
             ),
@@ -91,7 +91,7 @@ class _MusicHomepageState extends State<MusicHomepage> {
               appBar: AppBar(
                 automaticallyImplyLeading: false,
                 title: Text(
-                  "Chillify",
+                  "Botic Music",
                   style: TextStyle(
                     color: Color(0xFF274D85),
                     fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _MusicHomepageState extends State<MusicHomepage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "Chillify",
+            "Botic Music",
             style: TextStyle(
               fontSize: 20,
             ),

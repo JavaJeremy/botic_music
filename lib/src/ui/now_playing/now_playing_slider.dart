@@ -20,7 +20,7 @@ class NowPlayingSlider extends StatelessWidget {
           return Slider(
             value: 0,
             onChanged: (double value) => null,
-            activeColor: Colors.blue,
+            activeColor: Theme.of(context).primaryColor,
             inactiveColor: Color(0xFFCEE3EE),
           );
         }
@@ -28,7 +28,7 @@ class NowPlayingSlider extends StatelessWidget {
           return Slider(
             value: 0,
             onChanged: (double value) => null,
-            activeColor: Colors.blue,
+            activeColor: Theme.of(context).primaryColor,
             inactiveColor: Color(0xFFCEE3EE),
           );
         }
@@ -54,7 +54,7 @@ class NowPlayingSlider extends StatelessWidget {
             _globalBloc.musicPlayerBloc.invertSeekingState();
             _globalBloc.musicPlayerBloc.audioSeek(value / 1000);
           },
-          activeColor: Colors.blue,
+          activeColor: Theme.of(context).primaryColor,
           inactiveColor: Color(0xFFCEE3EE),
         );
       },
