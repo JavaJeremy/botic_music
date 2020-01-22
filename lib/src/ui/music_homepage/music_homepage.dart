@@ -1,14 +1,14 @@
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/ui/albums/albums_screen.dart';
+import 'package:botic_music/src/ui/all_songs/all_songs_screen.dart';
+import 'package:botic_music/src/ui/favorites/favorites_screen.dart';
+import 'package:botic_music/src/ui/music_homepage/bottom_panel.dart';
+import 'package:botic_music/src/ui/now_playing/now_playing_screen.dart';
+import 'package:botic_music/src/ui/search/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/ui/albums/albums_screen.dart';
-import 'package:music_app/src/ui/all_songs/all_songs_screen.dart';
-import 'package:music_app/src/ui/favorites/favorites_screen.dart';
-import 'package:music_app/src/ui/music_homepage/bottom_panel.dart';
-import 'package:music_app/src/ui/now_playing/now_playing_screen.dart';
-import 'package:music_app/src/ui/search/search_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 

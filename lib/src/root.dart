@@ -1,10 +1,10 @@
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/ui/music_homepage/music_homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/ui/music_homepage/music_homepage.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 
-class ChillifyApp extends StatelessWidget {
+class BoticMusic extends StatelessWidget {
   final GlobalBloc _globalBloc = GlobalBloc();
 
   @override

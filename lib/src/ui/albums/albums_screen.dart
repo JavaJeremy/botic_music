@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/common/empty_screen.dart';
-import 'package:music_app/src/models/album.dart';
-import 'package:music_app/src/ui/albums/album_tile.dart';
-import 'package:music_app/src/ui/albums/specific_album_screen.dart';
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/common/empty_screen.dart';
+import 'package:botic_music/src/models/album.dart';
+import 'package:botic_music/src/ui/albums/album_tile.dart';
+import 'package:botic_music/src/ui/albums/specific_album_screen.dart';
 import 'package:provider/provider.dart';
 
 class AlbumsScreen extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:music_app/src/blocs/music_player.dart';
-import 'package:music_app/src/blocs/permissions.dart';
+import 'package:botic_music/src/blocs/music_player.dart';
+import 'package:botic_music/src/blocs/permissions.dart';
 
 class GlobalBloc {
   PermissionsBloc _permissionsBloc;

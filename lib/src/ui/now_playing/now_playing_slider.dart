@@ -1,7 +1,7 @@
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/models/playerstate.dart';
 import 'package:flute_music_player/flute_music_player.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/models/playerstate.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 

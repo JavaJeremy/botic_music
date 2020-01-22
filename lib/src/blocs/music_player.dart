@@ -1,10 +1,12 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:botic_music/src/models/album.dart';
+import 'package:botic_music/src/models/playback.dart';
+import 'package:botic_music/src/models/playerstate.dart';
 import 'package:flute_music_player/flute_music_player.dart';
-import 'package:music_app/src/models/album.dart';
-import 'package:music_app/src/models/playback.dart';
-import 'package:music_app/src/models/playerstate.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 
 class MusicPlayerBloc {
   BehaviorSubject<List<Song>> _songs$;
@@ -20,15 +22,20 @@ class MusicPlayerBloc {
   Song _defaultSong;
 
   BehaviorSubject<List<Song>> get songs$ => _songs$;
+
   BehaviorSubject<List<Album>> get albums$ => _albums$;
+
   BehaviorSubject<MapEntry<PlayerState, Song>> get playerState$ =>
       _playerState$;
+
   BehaviorSubject<Duration> get position$ => _position$;
+
   BehaviorSubject<List<Playback>> get playback$ => _playback$;
+
   BehaviorSubject<List<Song>> get favorites$ => _favorites$;
 
   MusicPlayerBloc() {
-    _initDeafultSong();
+    _initDefaultSong();
     _initStreams();
     _initObservers();
     _initAudioPlayer();
@@ -36,7 +43,14 @@ class MusicPlayerBloc {
 
   Future<void> fetchSongs() async {
     await MusicFinder.allSongs().then(
-      (data) {
+      (data) async {
+        for (Song song in data) {
+          if (song.timestamp == null) {
+            File songFile = File.fromUri(Uri.file(song.uri));
+            DateTime date = await songFile.lastModified();
+            song.timestamp = date.millisecondsSinceEpoch;
+          }
+        }
         _songs$.add(data);
       },
     );
@@ -203,8 +217,8 @@ class MusicPlayerBloc {
     return data;
   }
 
-  Song _decodeSongFromJson(String ecodedSong) {
-    final _songMap = json.decode(ecodedSong);
+  Song _decodeSongFromJson(String encodedSong) {
+    final _songMap = json.decode(encodedSong);
     final Song _song = Song.fromMap(_songMap);
     return _song;
   }
@@ -222,7 +236,7 @@ class MusicPlayerBloc {
     return _map;
   }
 
-  void _initDeafultSong() {
+  void _initDefaultSong() {
     _defaultSong = Song(
       null,
       " ",
@@ -238,6 +252,8 @@ class MusicPlayerBloc {
   void _initObservers() {
     _songs$.listen(
       (List<Song> songs) {
+        //Sorting
+        songs.sort((a, b) => (b.timestamp.compareTo(a.timestamp)));
         _updateAlbums(songs);
       },
     ); // push albums from songs

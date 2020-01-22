@@ -1,4 +1,4 @@
-package com.example.music_app;
+package com.example.botic_music;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -1,10 +1,11 @@
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/common/music_icons.dart';
+import 'package:botic_music/src/models/playerstate.dart';
 import 'package:flute_music_player/flute_music_player.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/common/music_icons.dart';
-import 'package:music_app/src/models/playerstate.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class SongTile extends StatelessWidget {
   final Song _song;
   String _artists;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:music_app/src/models/album.dart';
-import 'package:music_app/src/ui/now_playing/empty_album_art.dart';
+import 'package:botic_music/src/models/album.dart';
+import 'package:botic_music/src/ui/now_playing/empty_album_art.dart';
 
 class AlbumTile extends StatelessWidget {
   final Album _album;

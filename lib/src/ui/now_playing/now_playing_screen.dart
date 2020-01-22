@@ -1,13 +1,13 @@
 import 'package:flute_music_player/flute_music_player.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/src/blocs/global.dart';
-import 'package:music_app/src/common/music_icons.dart';
-import 'package:music_app/src/models/playerstate.dart';
-import 'package:music_app/src/ui/now_playing/album_art_container.dart';
-import 'package:music_app/src/ui/now_playing/empty_album_art.dart';
-import 'package:music_app/src/ui/now_playing/music_board_controls.dart';
-import 'package:music_app/src/ui/now_playing/now_playing_slider.dart';
-import 'package:music_app/src/ui/now_playing/preferences_board.dart';
+import 'package:botic_music/src/blocs/global.dart';
+import 'package:botic_music/src/common/music_icons.dart';
+import 'package:botic_music/src/models/playerstate.dart';
+import 'package:botic_music/src/ui/now_playing/album_art_container.dart';
+import 'package:botic_music/src/ui/now_playing/empty_album_art.dart';
+import 'package:botic_music/src/ui/now_playing/music_board_controls.dart';
+import 'package:botic_music/src/ui/now_playing/now_playing_slider.dart';
+import 'package:botic_music/src/ui/now_playing/preferences_board.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
