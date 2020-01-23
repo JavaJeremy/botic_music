@@ -19,7 +19,7 @@ class AlbumArtContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(_radius),
+//      borderRadius: BorderRadius.circular(_radius),
       child: Stack(
         children: <Widget>[
           Container(
@@ -33,27 +33,27 @@ class AlbumArtContainer extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-          Opacity(
-            opacity: 1,
-            child: Container(
-              width: double.infinity,
-              height: _albumArtSize,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                  stops: [
-                    0.0,
-                    0.95,
-                  ],
-                  colors: [
-                    Theme.of(context).primaryColor,
-                    Theme.of(context).accentColor
-                  ],
-                ),
-              ),
-            ),
-          ),
+//          Opacity(
+//            opacity: 1,
+//            child: Container(
+//              width: double.infinity,
+//              height: _albumArtSize,
+//              decoration: BoxDecoration(
+//                gradient: LinearGradient(
+//                  begin: Alignment.bottomLeft,
+//                  end: Alignment.topRight,
+//                  stops: [
+//                    0.0,
+//                    0.95,
+//                  ],
+//                  colors: [
+//                    Theme.of(context).primaryColor,
+//                    Theme.of(context).accentColor
+//                  ],
+//                ),
+//              ),
+//            ),
+//          ),
         ],
       ),
     );

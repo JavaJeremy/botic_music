@@ -147,64 +147,56 @@ class NowPlayingScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
-              color: Colors.transparent,
-              height: _screenHeight / 22,
-            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.only(right: 22.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Expanded(child: NowPlayingSlider()),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: StreamBuilder<MapEntry<PlayerState, Song>>(
-                        stream: _globalBloc.musicPlayerBloc.playerState$,
-                        builder: (BuildContext context,
-                            AsyncSnapshot<MapEntry<PlayerState, Song>>
-                                snapshot) {
-                          if (!snapshot.hasData) {
-                            return Text(
-                              "0:00",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFFADB9CD),
-                                letterSpacing: 1,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            );
-                          }
-                          final Song _currentSong = snapshot.data.value;
-                          final PlayerState _state = snapshot.data.key;
-                          if (_state == PlayerState.stopped ||
-                              _currentSong.duration == null) {
-                            return Text(
-                              "0:00",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFFADB9CD),
-                                letterSpacing: 1,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            );
-                          }
-                          return Text(
-                            getDuration(_currentSong),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFFADB9CD),
-                              letterSpacing: 1,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          );
-                        }),
+                  StreamBuilder<MapEntry<PlayerState, Song>>(
+                    stream: _globalBloc.musicPlayerBloc.playerState$,
+                    builder: (BuildContext context,
+                        AsyncSnapshot<MapEntry<PlayerState, Song>> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Text(
+                          "0:00",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFFADB9CD),
+                            letterSpacing: 1,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        );
+                      }
+                      final Song _currentSong = snapshot.data.value;
+                      final PlayerState _state = snapshot.data.key;
+                      if (_state == PlayerState.stopped ||
+                          _currentSong.duration == null) {
+                        return Text(
+                          "0:00",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFFADB9CD),
+                            letterSpacing: 1,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        );
+                      }
+                      return Text(
+                        getDuration(_currentSong),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFFADB9CD),
+                          letterSpacing: 1,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    },
                   ),
                 ],
               ),

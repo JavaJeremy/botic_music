@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:botic_music/src/models/album.dart';
 import 'package:botic_music/src/ui/now_playing/empty_album_art.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class AlbumTile extends StatelessWidget {
   final Album _album;
@@ -12,6 +12,14 @@ class AlbumTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _tileHeight = MediaQuery.of(context).size.height / 3;
     final double _radius = 10;
+
+//    if (_album.art != null) {
+//      RegExp exp = new RegExp(r".png$");
+//      bool matches = exp.hasMatch(_album.art);
+//      if (!matches) {
+//        _album.art += ".png";
+//      }
+//    }
 
     return Stack(
       children: <Widget>[

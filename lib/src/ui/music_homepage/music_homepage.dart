@@ -69,6 +69,7 @@ class _MusicHomepageState extends State<MusicHomepage> {
 //                topLeft: Radius.circular(_radius),
 //                topRight: Radius.circular(_radius),
                   ),
+//              color: Theme.of(context).primaryColor,
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -78,7 +79,7 @@ class _MusicHomepageState extends State<MusicHomepage> {
                 ],
                 colors: [
                   Theme.of(context).primaryColor,
-                  Theme.of(context).accentColor,
+                  Theme.of(context).indicatorColor,
                 ],
               ),
             ),

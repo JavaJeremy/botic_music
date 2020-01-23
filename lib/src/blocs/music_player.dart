@@ -53,11 +53,12 @@ class MusicPlayerBloc {
           }
           //Try to generate Artist
           if (song.artist == '<unknown>') {
-            if (song.title.contains('-')) {
+            var separator = ' - ';
+            if (song.title.contains(separator)) {
               song.artist =
-                  song.title.substring(0, song.title.indexOf('-') - 1);
-              song.title = song.title
-                  .substring(song.title.indexOf('-') + 2, song.title.length);
+                  song.title.substring(0, song.title.indexOf(separator));
+              song.title = song.title.substring(
+                  song.title.indexOf(separator) + 3, song.title.length);
             }
           }
         }
