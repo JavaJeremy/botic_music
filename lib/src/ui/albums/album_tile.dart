@@ -32,7 +32,7 @@ class AlbumTile extends StatelessWidget {
                     image: AssetImage(_album.art),
                     fit: BoxFit.fill,
                   ),
-                  borderRadius: BorderRadius.circular(_radius),
+//                  borderRadius: BorderRadius.circular(_radius),
                 ),
               )
             : EmptyAlbumArtContainer(
@@ -44,7 +44,7 @@ class AlbumTile extends StatelessWidget {
           height: _tileHeight,
           width: double.infinity,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(_radius),
+//            borderRadius: BorderRadius.circular(_radius),
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,

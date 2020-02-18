@@ -18,6 +18,7 @@ class AlbumArtContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var songImage = AssetImage(_currentSong.albumArt);
     return ClipRRect(
 //      borderRadius: BorderRadius.circular(_radius),
       child: Stack(
@@ -26,34 +27,11 @@ class AlbumArtContainer extends StatelessWidget {
             width: double.infinity,
             height: _albumArtSize,
             child: FadeInImage(
-              placeholder: AssetImage(_currentSong.albumArt),
-              image: AssetImage(
-                _currentSong.albumArt,
-              ),
+              placeholder: songImage,
+              image: songImage,
               fit: BoxFit.fill,
             ),
           ),
-//          Opacity(
-//            opacity: 1,
-//            child: Container(
-//              width: double.infinity,
-//              height: _albumArtSize,
-//              decoration: BoxDecoration(
-//                gradient: LinearGradient(
-//                  begin: Alignment.bottomLeft,
-//                  end: Alignment.topRight,
-//                  stops: [
-//                    0.0,
-//                    0.95,
-//                  ],
-//                  colors: [
-//                    Theme.of(context).primaryColor,
-//                    Theme.of(context).accentColor
-//                  ],
-//                ),
-//              ),
-//            ),
-//          ),
         ],
       ),
     );
